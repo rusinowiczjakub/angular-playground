@@ -1,0 +1,33 @@
+nav {
+  color: white;
+  height: 100vh;
+  background: #0d3349;
+  position: absolute;
+  width: 250px;
+
+  .fa.fa-bars {
+    font-size: 20px;
+    position: absolute;
+    right: 13.5px;
+    top: 20px;
+    z-index: 100;
+  }
+
+  ul {
+    margin-top: 75px;
+
+    li {
+
+      a {
+
+        span {
+          display: none;
+        }
+
+      }
+
+    }
+
+  }
+
+}
