@@ -1,7 +1,11 @@
 <nav [@slideInOut]="menuState">
-  <i class="fa fa-bars" (click)="navToggle()"></i>
+
+  <i class="{{ menuState == 'out' ? 'fa fa-bars' : 'fa fa-times' }}" (click)="navToggle()"></i>
   <ul>
-    <li><a><span [@showA]="stateA">Home</span><i class="fa fa-home"></i></a></li>
-    <li><a><span [@showA]="stateA">My panel</span><i class="fa fa-user-circle"></i></a></li>
+    <li><a href="/"><i *ngIf="menuState == 'out'" class="fa fa-home"></i><span [@showA]="stateA">Home</span></a></li>
+    <li><a routerLink="/test"><i *ngIf="menuState == 'out'" class="fa fa-user-circle"></i><span [@showA]="stateA">My panel</span></a></li>
+    <li><a><i *ngIf="menuState == 'out'" class="fa fa-bolt" aria-hidden="true"></i><span [@showA]="stateA">Workout</span></a></li>
+    <li><a><i *ngIf="menuState == 'out'" class="fa fa-cutlery" aria-hidden="true"></i><span [@showA]="stateA">Diet</span></a></li>
   </ul>
+  
 </nav>

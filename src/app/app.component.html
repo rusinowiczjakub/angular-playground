@@ -1,4 +1,8 @@
 <header>
   <div class="bg"></div>
-  <navbar></navbar>
+  <navbar (navState)="changeCanvasState($event)"></navbar>
+  <div [@off-canvas]="canvasState" class="container">
+    <p>elo</p>
+    <router-outlet></router-outlet>
+  </div>
 </header>
