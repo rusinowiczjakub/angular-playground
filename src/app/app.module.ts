@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TestComponent } from './test/test.component';
+import { TopbarComponent } from './topbar/topbar.component';
 const appRoutes: Routes = [
     { path: 'test', component: TestComponent },
 ];
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     TestComponent,
+    TopbarComponent,
   ],
   imports: [
     BrowserModule,
