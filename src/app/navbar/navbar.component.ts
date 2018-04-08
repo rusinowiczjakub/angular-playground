@@ -60,7 +60,7 @@ ngOnInit() {
   @Output() navState: EventEmitter<string> = new EventEmitter<string>();
   menuState: string = 'out'
   stateA: string = 'out';
-  categoryState: any = {
+  categoryState = {
       1: 'closed',
       2: 'closed',
       3: 'closed',
@@ -71,8 +71,9 @@ ngOnInit() {
   navToggle() {
       this.stateA = this.stateA === 'out' ? 'in' : 'out';
       this.menuState = this.menuState === 'out' ? 'in' : 'out';
-      for (let i = 1; i <= this.categoryState.length; i++) {
-          this.categoryState[i] = this.menuState === 'out' ? 'closed' : 'closed';
+
+      for (let i = 1; i <= Object.keys(this.categoryState).length; i++) {
+          this.categoryState[i] = this.menuState === 'in' ? 'closed' : 'closed';
       }
 
       this.navState.emit(this.menuState);

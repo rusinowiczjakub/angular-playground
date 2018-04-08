@@ -1,9 +1,11 @@
 <nav>
   <ul>
     <li>
-      <a><span>Zaloguj sie</span></a>
+      <a href=""><i class="fa fa-user-o" aria-hidden="true"></i><span>Zaloguj sie</span></a>
     </li>
-    <li><a>Załóż konto</a></li>
+    <li>
+      <a href="">Załóż konto</a>
+    </li>
     <li [ngClass]="{ focused: searchFocus }" >
       <span class="icon"><i class="fa fa-search"></i></span>
       <input (blur)="changeOutline()" (focus)="changeOutline()" type="search" />

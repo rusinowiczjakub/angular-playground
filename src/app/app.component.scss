@@ -5,3 +5,36 @@
     background: linear-gradient(to right, rgba(13, 51, 73, .6), rgba(13, 100, 73, .6)), url('/../assets/images/bg-image.jpg') no-repeat center;
     z-index: -1;
 }
+
+section {
+    margin-top: 450px;
+
+    h3 {
+        color: white;
+        margin-left: 90px;
+        // margin-bottom: 30px;
+    }
+
+    #top-items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+
+        // margin-top: 150px;
+
+        i {
+            color: white;
+            font-size: 40px;
+        }
+
+        div {
+            width: 250px;
+            height: 350px;
+            background: white;
+            margin: 15px;
+        }
+    }
+}    
