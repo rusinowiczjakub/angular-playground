@@ -21,13 +21,36 @@ nav {
     li {
       margin-top: 70px;
 
+      ul {
+        margin-top: 0;
+        display: none;
+        background: rgb(8, 39, 56);
+
+        li {
+          margin-top: 25px;
+          font-size: 0.8rem;
+        }
+
+      }
+
       a {
         text-decoration: none;
         color: white;
 
+        .fa {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
         span {
           margin-left: 25px;
           transition: .2s ease-in-out;
+
+          i {
+            margin-left: 20px;
+            cursor: pointer;
+          }
+
         }
 
         i {

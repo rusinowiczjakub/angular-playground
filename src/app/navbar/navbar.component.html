@@ -1,11 +1,40 @@
-<nav [@slideInOut]="menuState">
+        <nav [@slideInOut]="menuState">
 
-  <i class="{{ menuState == 'out' ? 'fa fa-bars' : 'fa fa-times' }}" (click)="navToggle()"></i>
-  <ul>
-    <li><a href="/"><i *ngIf="menuState == 'out'" class="fa fa-home"></i><span [@showA]="stateA">Home</span></a></li>
-    <li><a routerLink="/test"><i *ngIf="menuState == 'out'" class="fa fa-user-circle"></i><span [@showA]="stateA">My panel</span></a></li>
-    <li><a><i *ngIf="menuState == 'out'" class="fa fa-bolt" aria-hidden="true"></i><span [@showA]="stateA">Workout</span></a></li>
-    <li><a><i *ngIf="menuState == 'out'" class="fa fa-cutlery" aria-hidden="true"></i><span [@showA]="stateA">Diet</span></a></li>
-  </ul>
-  
-</nav>
+          <i class="{{ menuState == 'out' ? 'fa fa-bars' : 'fa fa-times' }}" (click)="navToggle()"></i>
+          <ul>
+            <li><a href="/"><i *ngIf="menuState == 'out'" class="fa fa-home"></i><span [@showA]="stateA">Strona główna</span></a></li>
+            <li>
+              <a><i *ngIf="menuState == 'out'" class="fa fa-mars"></i>
+                <span [@showA]="stateA" >Mężczyzna <i (click)="categoryToggle(1)" class="{{ categoryState[1] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}" aria-hidden="true"></i></span>
+              </a>
+              <ul [@slideCategory]="categoryState[1]">
+                <li [@slideCategory]="listState">Okrycia wierzchnie</li>
+                <li [@slideCategory]="listState">T-shirty</li>
+                <li [@slideCategory]="listState">Spodnie</li>
+                <li [@slideCategory]="listState">Bluzy</li>
+                <li [@slideCategory]="listState">Dodatki</li>
+              </ul>
+            </li>
+            <li>
+              <a><i *ngIf="menuState == 'out'" class="fa fa-venus" aria-hidden="true"></i>
+                <span [@showA]="stateA">Kobieta <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+              </a>
+            </li>
+            <li>
+              <a><i *ngIf="menuState == 'out'" class="fa fa-intersex"></i>
+                <span [@showA]="stateA">Unisex <i (click)="categoryToggle(3)" class="{{ categoryState[3] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}" aria-hidden="true"></i></span>
+                <ul [@slideCategory]="categoryState[3]">
+                  <li [@slideCategory]="listState">Test</li>
+                  <li [@slideCategory]="listState">test 2</li>
+                  <li [@slideCategory]="listState">test 3</li>
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a><i *ngIf="menuState == 'out'" class="fa fa-child" aria-hidden="true"></i>
+                <span [@showA]="stateA">Dzieci<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+              </a>
+            </li>
+          </ul>
+          
+        </nav>

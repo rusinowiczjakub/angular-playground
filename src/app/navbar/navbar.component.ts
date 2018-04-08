@@ -27,9 +27,27 @@ import {AppComponent} from "../app.component";
           state('out', style({
               opacity: 0
           })),
-
-        //   transition('out => in', animate('10ms'))
       ]),
+
+      trigger('slideCategory', [
+          state('opened', style({
+              display: 'block',
+          })),
+
+          state('closed', style({
+              display: 'none',
+          })),
+
+          state('visible', style({
+              opacity: 1
+          })),
+          
+          state('unvisible', style({
+              opacity: 0
+          })),
+
+          transition('visible <=> unvisible', animate('300ms'))
+      ])
   ]
 })
 
@@ -42,10 +60,26 @@ ngOnInit() {
   @Output() navState: EventEmitter<string> = new EventEmitter<string>();
   menuState: string = 'out'
   stateA: string = 'out';
+  categoryState: any = {
+      1: 'closed',
+      2: 'closed',
+      3: 'closed',
+      4: 'closed',
+  }
+  listState: string = 'unvisible';
   
   navToggle() {
       this.stateA = this.stateA === 'out' ? 'in' : 'out';
       this.menuState = this.menuState === 'out' ? 'in' : 'out';
+      for (let i = 1; i <= this.categoryState.length; i++) {
+          this.categoryState[i] = this.menuState === 'out' ? 'closed' : 'closed';
+      }
+
       this.navState.emit(this.menuState);
+  }
+
+  categoryToggle(index) {
+      this.categoryState[index] = this.categoryState[index] === 'closed' ? 'opened' : 'closed';
+      this.listState = this.listState === 'unvisible' ? 'visible' : 'unvisible';
   }
 }
