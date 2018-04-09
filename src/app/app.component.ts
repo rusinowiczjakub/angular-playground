@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgOnChangesFeature } from '@angular/core/src/render3';
+import { SearchService } from './search.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { NgOnChangesFeature } from '@angular/core/src/render3';
 
         transition('out <=> in', animate('300ms')),
     ])
-  ]
+  ],
+  providers: [ SearchService ]
 })
 export class AppComponent {
 

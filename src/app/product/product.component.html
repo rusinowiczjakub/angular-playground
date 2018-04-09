@@ -1,0 +1,5 @@
+<div id="top-items">
+  <i class="fa fa-chevron-left"></i>
+  <div *ngFor="let product of products | productFilter:term">{{ product.name }}</div>
+  <i class="fa fa-chevron-right"></i>
+</div>

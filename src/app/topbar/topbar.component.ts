@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'topbar',
@@ -8,14 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class TopbarComponent implements OnInit {
 
   searchFocus: boolean = false;
+  products: any;
 
-  constructor() { }
+  constructor(private service: SearchService) {
+    this.products = service.getProducts();
+   }
 
   ngOnInit() {
   }
 
   changeOutline() {
     this.searchFocus = !this.searchFocus;
+  }
+
+  changeTerm(term) {
+    this.service.setParams(term);
   }
 
 }

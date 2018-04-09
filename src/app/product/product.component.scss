@@ -1,0 +1,22 @@
+#top-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+    // margin-top: 150px;
+
+    i {
+        color: white;
+        font-size: 40px;
+    }
+
+    div {
+        width: 250px;
+        height: 350px;
+        background: white;
+        margin: 15px;
+    }
+}
