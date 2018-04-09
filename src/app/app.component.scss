@@ -7,7 +7,20 @@
 }
 
 section {
-    margin-top: 450px;
+    // margin-top: 450px;
+    &:first-of-type {
+        margin-top: 40px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header {
+        width: 75%;
+        height: 450px;
+        background: white;
+    }
 
     h3 {
         color: white;

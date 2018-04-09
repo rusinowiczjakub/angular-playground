@@ -12,28 +12,41 @@
                 <li [@slideCategory]="listState">T-shirty</li>
                 <li [@slideCategory]="listState">Spodnie</li>
                 <li [@slideCategory]="listState">Bluzy</li>
+                <li [@slideCategory]="listState">Koszule</li>
                 <li [@slideCategory]="listState">Dodatki</li>
               </ul>
             </li>
             <li>
               <a><i *ngIf="menuState == 'out'" class="fa fa-venus" aria-hidden="true"></i>
-                <span [@showA]="stateA">Kobieta <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                <span [@showA]="stateA">Kobieta <i (click)="categoryToggle(2)"  class="fa fa-chevron-down" aria-hidden="true"></i></span>
               </a>
+              <ul [@slideCategory]="categoryState[2]">
+                <li [@slideCategory]="listState">Okrycia wierzchnie</li>
+                <li [@slideCategory]="listState">T-shirty</li>
+                <li [@slideCategory]="listState">Spodnie</li>
+                <li [@slideCategory]="listState">Sukienki</li>
+                <li [@slideCategory]="listState">Spódnice</li>
+                <li [@slideCategory]="listState">Bluzy</li>
+                <li [@slideCategory]="listState">Dodatki</li>
+              </ul>
             </li>
             <li>
               <a><i *ngIf="menuState == 'out'" class="fa fa-intersex"></i>
                 <span [@showA]="stateA">Unisex <i (click)="categoryToggle(3)" class="{{ categoryState[3] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}" aria-hidden="true"></i></span>
+              </a>
                 <ul [@slideCategory]="categoryState[3]">
                   <li [@slideCategory]="listState">Test</li>
                   <li [@slideCategory]="listState">test 2</li>
                   <li [@slideCategory]="listState">test 3</li>
                 </ul>
-              </a>
             </li>
             <li>
               <a><i *ngIf="menuState == 'out'" class="fa fa-child" aria-hidden="true"></i>
-                <span [@showA]="stateA">Dzieci<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                <span [@showA]="stateA">Dzieci<i (click)="categoryToggle(4)"  class="fa fa-chevron-down" aria-hidden="true"></i></span>
               </a>
+              <ul [@slideCategory]="categoryState[4]">
+                <li [@slideCategory]="listState">Zabawki</li>
+              </ul>
             </li>
           </ul>
           
