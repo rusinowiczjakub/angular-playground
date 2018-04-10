@@ -1,17 +1,19 @@
 nav {
-  color: white;
+  color:black;
   height: 100vh;
   background: #0d3349;
   position: absolute;
   width: 250px;
 
-  .fa.fa-bars, .fa.fa-times {
-    font-size: 20px;
+  .fa.fa-th, .fa.fa-times {
+    font-size: 25px;
     position: absolute;
-    right: 13.5px;
+    left: 40px;
     top: 20px;
     z-index: 100;
     cursor: pointer;
+    transition: left 300ms;
+    transition-delay: 50ms;
   }
 
   ul {
@@ -29,6 +31,7 @@ nav {
         li {
           margin-top: 25px;
           font-size: 0.8rem;
+          color: white;
         }
 
       }
@@ -48,6 +51,7 @@ nav {
 
           i {
             margin-left: 20px;
+            font-size: 10px;
             cursor: pointer;
           }
 

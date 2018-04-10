@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {animate, state, style, transition, trigger} from "@angular/animations";
-import {AppComponent} from "../app.component";
+import { animate, state, style, transition, trigger } from "@angular/animations";
+import { AppComponent } from "../app.component";
 
 @Component({
   selector: 'navbar',
@@ -13,12 +13,22 @@ import {AppComponent} from "../app.component";
           })),
 
           state('out', style({
-              width: '45px'
+              width: '0px'
           })),
 
-          transition('in => out', animate('300ms ease-in-out')),
-          transition('out => in', animate('300ms ease-in-out'))
+          transition('in => out', animate('300ms')),
+          transition('out => in', animate('300ms'))
       ]),
+
+      trigger('slideIcon', [
+          state('in', style({
+              left: '290px',
+          })),
+          state('out', style({
+              left: '40px'
+          })),
+      ]),
+
       trigger('showA', [
           state('in', style({
               opacity: 1,
@@ -60,6 +70,8 @@ ngOnInit() {
   @Output() navState: EventEmitter<string> = new EventEmitter<string>();
   menuState: string = 'out'
   stateA: string = 'out';
+  iconState: string = 'out';
+  scaleState: string = 'out';
   categoryState = {
       1: 'closed',
       2: 'closed',
@@ -71,6 +83,8 @@ ngOnInit() {
   navToggle() {
       this.stateA = this.stateA === 'out' ? 'in' : 'out';
       this.menuState = this.menuState === 'out' ? 'in' : 'out';
+      this.iconState = this.iconState === 'out' ? 'in' : 'out';
+      this.scaleState = this.scaleState === 'out' ? 'in' : 'out';
 
       for (let i = 1; i <= Object.keys(this.categoryState).length; i++) {
           this.categoryState[i] = this.menuState === 'in' ? 'closed' : 'closed';

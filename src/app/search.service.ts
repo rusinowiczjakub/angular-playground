@@ -47,7 +47,38 @@ export class SearchService {
         name: "Płaszcz Jack&Jones",
         stock: 10,
         price: 20
-      }
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax",
+        stock: 10,
+        price: 20
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax1",
+        stock: 10,
+        price: 20
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax2",
+        stock: 10,
+        price: 20
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax3",
+        stock: 10,
+        price: 20
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax4",
+        stock: 10,
+        price: 20
+      },
+
     ]
   }
 }

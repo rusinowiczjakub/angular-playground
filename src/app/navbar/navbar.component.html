@@ -1,10 +1,11 @@
         <nav [@slideInOut]="menuState">
 
-          <i class="{{ menuState == 'out' ? 'fa fa-bars' : 'fa fa-times' }}" (click)="navToggle()"></i>
+          
+          <i [@slideIcon]="iconState" class="{{ menuState == 'out' ? 'fa fa-th' : 'fa fa-times' }}" (click)="navToggle()"></i>
           <ul>
-            <li><a href="/"><i *ngIf="menuState == 'out'" class="fa fa-home"></i><span [@showA]="stateA">Strona główna</span></a></li>
+            <li><a href="/"><i *ngIf="menuState == 'in'" class="fa fa-home"></i><span [@showA]="stateA">Strona główna</span></a></li>
             <li>
-              <a><i *ngIf="menuState == 'out'" class="fa fa-mars"></i>
+              <a><i *ngIf="menuState == 'in'" class="fa fa-mars"></i>
                 <span [@showA]="stateA" >Mężczyzna <i (click)="categoryToggle(1)" class="{{ categoryState[1] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}" aria-hidden="true"></i></span>
               </a>
               <ul [@slideCategory]="categoryState[1]">
@@ -17,7 +18,7 @@
               </ul>
             </li>
             <li>
-              <a><i *ngIf="menuState == 'out'" class="fa fa-venus" aria-hidden="true"></i>
+              <a><i *ngIf="menuState == 'in'" class="fa fa-venus" aria-hidden="true"></i>
                 <span [@showA]="stateA">Kobieta <i (click)="categoryToggle(2)"  class="fa fa-chevron-down" aria-hidden="true"></i></span>
               </a>
               <ul [@slideCategory]="categoryState[2]">
@@ -31,7 +32,7 @@
               </ul>
             </li>
             <li>
-              <a><i *ngIf="menuState == 'out'" class="fa fa-intersex"></i>
+              <a><i *ngIf="menuState == 'in'" class="fa fa-intersex"></i>
                 <span [@showA]="stateA">Unisex <i (click)="categoryToggle(3)" class="{{ categoryState[3] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}" aria-hidden="true"></i></span>
               </a>
                 <ul [@slideCategory]="categoryState[3]">
@@ -41,7 +42,7 @@
                 </ul>
             </li>
             <li>
-              <a><i *ngIf="menuState == 'out'" class="fa fa-child" aria-hidden="true"></i>
+              <a><i *ngIf="menuState == 'in'" class="fa fa-child" aria-hidden="true"></i>
                 <span [@showA]="stateA">Dzieci<i (click)="categoryToggle(4)"  class="fa fa-chevron-down" aria-hidden="true"></i></span>
               </a>
               <ul [@slideCategory]="categoryState[4]">
