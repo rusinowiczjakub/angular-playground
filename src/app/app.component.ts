@@ -3,6 +3,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgOnChangesFeature } from '@angular/core/src/render3';
 import { SearchService } from './search.service';
+import { ProductComponent } from './product/product.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,14 @@ import { SearchService } from './search.service';
 })
 export class AppComponent {
 
+    term: string;
     canvasState: string = 'out';
+
+    constructor() {
+        setInterval(() => {
+            console.log(this.term);
+        }, 4000);
+    }
 
     public changeCanvasState(state):void {
         this.canvasState = state;

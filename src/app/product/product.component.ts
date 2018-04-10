@@ -35,6 +35,13 @@ export class ProductComponent implements OnInit {
     this.start = 0;
     this.end = 5;
 
+    this.slideRecommended();
+  }
+
+   ngOnInit() {
+   }
+
+   slideRecommended() {
     setInterval(()=> {
       this.start++;
       this.end++;
@@ -44,9 +51,6 @@ export class ProductComponent implements OnInit {
         this.end = 5;
       }
     }, 4000); 
-  }
-
-   ngOnInit() {
    }
 
 
