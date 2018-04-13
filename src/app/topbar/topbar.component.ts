@@ -26,7 +26,7 @@ export class TopbarComponent implements OnInit {
     }
 
     changeTerm(term) {
-        this.service.setParams(term);
+        // this.service.setParams(term);
     }
 
 }
