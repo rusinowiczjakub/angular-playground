@@ -9,7 +9,7 @@
     <li [ngClass]="{ 'focused': searchFocus, 'unfocused': !searchFocus }" >
       <form id="productFilter">
         <span class="icon"><i class="fa fa-search"></i></span>
-        <input name="search" (blur)="changeOutline()" (keyup)="changeTerm($event)" (focus)="changeOutline()" type="search" />
+        <input [(ngModel)]="term" name="search" (blur)="changeOutline()" (keyup)="changeTerm(term)" (focus)="changeOutline()" type="search" />
     </form>
     </li>
   </ul>

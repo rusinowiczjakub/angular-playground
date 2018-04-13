@@ -11,6 +11,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 export class TopbarComponent implements OnInit {
 
     searchFocus: boolean = false;
+    term: string;
     products: any;
     @Input() state: string;
 
@@ -26,7 +27,7 @@ export class TopbarComponent implements OnInit {
     }
 
     changeTerm(term) {
-        // this.service.setParams(term);
+        this.service.setParams(term);
     }
 
 }
