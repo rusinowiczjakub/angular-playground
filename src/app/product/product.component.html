@@ -1,5 +1,13 @@
-<div id="top-items">
-  <i class="fa fa-chevron-left"></i>
-  <div [@smoothFilter] *ngFor="let product of products | productFilter:term | slice:start:end">{{ product.name }}</div>
-  <i class="fa fa-chevron-right"></i>
+<div>
+  
+  <div class="product" [@smoothFilter] *ngFor="let product of products | productFilter:term">
+    <div class="product-card">
+      <img src="http://via.placeholder.com/220x300"/>
+      <div class="details">
+        <div>{{ product.price }}</div>
+        <div>{{ product.name }}</div>
+      </div>
+    </div>
+  </div>
+  <!-- <i class="fa fa-chevron-right"></i> -->
 </div>

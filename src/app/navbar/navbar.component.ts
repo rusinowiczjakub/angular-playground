@@ -32,10 +32,12 @@ import { AppComponent } from "../app.component";
       trigger('showA', [
           state('in', style({
               opacity: 1,
+              width: 0
           })),
 
           state('out', style({
-              opacity: 0
+              opacity: 0,
+              width: 0
           })),
       ]),
 

@@ -1,13 +1,19 @@
 nav {
     width: 100vw;
-    height: 60px;
-    background: rgba(255, 255, 255, .8);
+    height: 50px;
+    background: rgba(255, 255, 255, .6);
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    text-align: center;
+    position: fixed;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 1);
+    
 
     ul {
-        margin-right: 20px;
+        // margin-right: 20px;
         width: 600px;
         list-style-type: none;
         height: 100%;
@@ -30,6 +36,7 @@ nav {
                 align-items: center;
                 transition: all 200ms;
                 text-decoration: none;
+                font-size: 13px;
                 
                 &:hover {
                     transition: all 200ms;
@@ -57,6 +64,10 @@ nav {
             height: 60%;
             width: 300px;
             transition: all 400ms;
+
+            form {
+                width: 100%;
+            }
 
             i {
                 display: inline-block;
@@ -87,6 +98,13 @@ nav {
             -webkit-box-shadow: 0px 0px 68px 0px rgba(28, 112, 223, 0.75);
             -moz-box-shadow: 0px 0px 68px 0px rgba(28, 112, 223, 0.75);
             box-shadow: 0px 0px 68px 0px rgba(28, 112, 223, 0.75);
+        }
+
+        .unfocused {
+            transition: all 400ms;
+            -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .5);
+            -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .5);
+            box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .5);
         }
 
     }

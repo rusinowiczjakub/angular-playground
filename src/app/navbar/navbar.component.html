@@ -1,7 +1,10 @@
         <nav [@slideInOut]="menuState">
 
           
-          <i [@slideIcon]="iconState" class="{{ menuState == 'out' ? 'fa fa-th' : 'fa fa-times' }}" (click)="navToggle()"></i>
+          <span class="wrapper" [@slideIcon]="iconState">
+            <i class="{{ menuState == 'out' ? 'fa fa-th' : 'fa fa-times' }}" (click)="navToggle()"></i>
+            <p>Katalog</p>
+          </span>
           <ul>
             <li><a href="/"><i *ngIf="menuState == 'in'" class="fa fa-home"></i><span [@showA]="stateA">Strona główna</span></a></li>
             <li>

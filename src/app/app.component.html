@@ -1,19 +1,10 @@
-<div class="bg"></div>
 <navbar (navState)="changeCanvasState($event)"></navbar>
-<topbar></topbar>
+<topbar [state]="topbarState"></topbar>
+<header>
+</header>
 <div [@off-canvas]="canvasState" class="container">
   <router-outlet></router-outlet>
-  <header>
-  </header>
   <section>
-    <header>
-      
-    </header>
-  </section>
-  <section>
-    <h3>
-        AKTUALNIE POLECANE
-    </h3>
     <product></product>
 </section>
 </div>

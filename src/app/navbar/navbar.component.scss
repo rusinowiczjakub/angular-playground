@@ -1,19 +1,33 @@
 nav {
   color:black;
   height: 100vh;
-  background: #0d3349;
-  position: absolute;
+  background: rgba(44, 108, 203, 1);
+  position: fixed;
   width: 250px;
+  z-index: 1;
 
-  .fa.fa-th, .fa.fa-times {
+  span.wrapper {
     font-size: 25px;
     position: absolute;
     left: 40px;
-    top: 20px;
+    top: 15px;
     z-index: 100;
     cursor: pointer;
     transition: left 300ms;
     transition-delay: 50ms;
+    width: 100px;
+    display: flex;
+
+    i {
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    p {
+      display: inline-block;
+      font-size: 13px;
+      margin: 2px;
+    }
   }
 
   ul {
@@ -22,15 +36,16 @@ nav {
 
     li {
       margin-top: 70px;
+      font-size: 13px;
 
       ul {
         margin-top: 0;
         display: none;
-        background: rgb(8, 39, 56);
+        background: rgb(8, 86, 202);
 
         li {
           margin-top: 25px;
-          font-size: 0.8rem;
+          font-size: 11px;
           color: white;
         }
 
@@ -41,7 +56,7 @@ nav {
         color: white;
 
         .fa {
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 600;
         }
 

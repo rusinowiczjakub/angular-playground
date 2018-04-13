@@ -6,7 +6,7 @@
     <li>
       <a href="">Załóż konto</a>
     </li>
-    <li [ngClass]="{ focused: searchFocus }" >
+    <li [ngClass]="{ 'focused': searchFocus, 'unfocused': !searchFocus }" >
       <form id="productFilter">
         <span class="icon"><i class="fa fa-search"></i></span>
         <input [(ngModel)]="term" name="search" (blur)="changeOutline()" (keyup)="changeTerm(term)" (focus)="changeOutline()" type="search" />

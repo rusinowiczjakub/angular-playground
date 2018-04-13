@@ -22,13 +22,14 @@ export class SearchService {
         id: 1,
         name: "Koszulka Tommy Hilfiger",
         stock: 10,
-        price: 20
+        price: 20.00,
+        size: 'M/40/12'
       },
       {
         id: 1,
         name: "Spodnie Levis",
         stock: 10,
-        price: 20
+        price: 20.00
       },
       {
         id: 1,
@@ -40,13 +41,13 @@ export class SearchService {
         id: 1,
         name: "Buty Supreme",
         stock: 10,
-        price: 20
+        price: 20.00
       },
       {
         id: 1,
         name: "Płaszcz Jack&Jones",
         stock: 10,
-        price: 20
+        price: 20.00
       },
       {
         id: 1,
@@ -58,26 +59,51 @@ export class SearchService {
         id: 1,
         name: "Buty Nike Airmax1",
         stock: 10,
-        price: 20
+        price: 20.00
       },
       {
         id: 1,
         name: "Buty Nike Airmax2",
         stock: 10,
-        price: 20
+        price: 20.00
       },
       {
         id: 1,
         name: "Buty Nike Airmax3",
         stock: 10,
-        price: 20
+        price: 20.00
       },
       {
         id: 1,
         name: "Buty Nike Airmax4",
         stock: 10,
-        price: 20
+        price: 20.00
       },
+      {
+        id: 1,
+        name: "Buty Nike Airmax4",
+        stock: 10,
+        price: 20.00
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax4",
+        stock: 10,
+        price: 20.00
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax4",
+        stock: 10,
+        price: 20.00
+      },
+      {
+        id: 1,
+        name: "Buty Nike Airmax4",
+        stock: 10,
+        price: 20.00
+      },
+      
 
     ]
   }

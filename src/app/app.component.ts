@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, EventEmitter, Output } from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgOnChangesFeature } from '@angular/core/src/render3';
@@ -12,7 +12,7 @@ import { ProductComponent } from './product/product.component';
   animations: [
     trigger('off-canvas', [
         state('out', style({
-            'margin-left': '45px'
+            'margin-left': '0px'
         })),
 
         state('in', style({
@@ -26,16 +26,15 @@ import { ProductComponent } from './product/product.component';
 })
 export class AppComponent {
 
+    topbarState: string;
     term: string;
     canvasState: string = 'out';
 
     constructor() {
-        setInterval(() => {
-            console.log(this.term);
-        }, 4000);
     }
 
     public changeCanvasState(state):void {
         this.canvasState = state;
+        this.topbarState = state;
     }
 }
