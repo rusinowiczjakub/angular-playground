@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { ProductFilterPipe } from '../product-filter.pipe';
 import { SearchService } from '../search.service';
 import { Observable } from 'rxjs/Observable';
-import { animate, state, style, transition, trigger } from "@angular/animations";
+import { animate, state, style, transition, trigger, query, stagger, keyframes } from "@angular/animations";
 
 @Component({
   selector: 'product',
@@ -25,26 +25,48 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
           animate('600ms ease-out', style({
             opacity: 0,
           }))
-        ])
+        ]),
+    ]),
+    trigger("loadAnimation", [
+      transition('* => *', [
+
+        query(':enter', style({ opacity: 0 }), {optional: true}),
+
+        query(':enter', stagger('100ms', [
+          animate('0.5s ease-in', style({
+            opacity: 1
+          })
+        )
+      ]), {
+        optional: true
+      })
+      ])
     ])
   ]
 })
 
 export class ProductComponent implements OnInit {
 
-  products: any;
+  products: Array<any> = [];
   term: any = '';
   start: number;
   end: number;
 
   constructor(private service: SearchService) {
-    this.products = service.getProducts();
-    this.service.getTerm().subscribe(newTerm => {this.term = newTerm});
-    this.start = 0;
-    this.end = 5;
+    service.getTerm().subscribe(newTerm => {
+      this.term = newTerm;
+    });
+
+    this.products = service.getProducts()
+
+  }
+
+  log() {
+    console.log('elo');
   }
 
    ngOnInit() {
+    
    }
 
 
