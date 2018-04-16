@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, HostListener } from '@angular/core';
 import { SearchService } from '../search.service';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 
@@ -10,6 +10,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class TopbarComponent implements OnInit {
 
+    mobile: boolean;
     searchFocus: boolean = false;
     term: string;
     products: any;
@@ -20,6 +21,13 @@ export class TopbarComponent implements OnInit {
     }
 
     ngOnInit() {
+        if (window.screen.width <= 768) { // 768px portrait
+            this.mobile = true;
+        }
+
+        if (window.screen.width > 768) {
+            this.mobile = false;
+        }
     }
 
     changeOutline() {
@@ -28,6 +36,17 @@ export class TopbarComponent implements OnInit {
 
     changeTerm(term) {
         this.service.setParams(term);
+    }
+
+    @HostListener("window:resize", ['$event'])
+    onResize() {
+        if (window.screen.width <= 768) { // 768px portrait
+            this.mobile = true;
+        }
+
+        if (window.screen.width > 768) {
+            this.mobile = false;
+        }
     }
 
 }

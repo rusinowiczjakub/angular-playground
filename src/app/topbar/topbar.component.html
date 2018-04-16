@@ -1,10 +1,10 @@
 <nav>
-  <ul>
+  <ul *ngIf="!mobile">
     <li>
-      <a href=""><i class="fa fa-user-o" aria-hidden="true"></i><span>Zaloguj sie</span></a>
+      <a *ngIf="!mobile" href=""><i class="fa fa-user-o" aria-hidden="true"></i><span>Zaloguj sie</span></a>
     </li>
     <li>
-      <a href="">Załóż konto</a>
+      <a *ngIf="!mobile" href="">Załóż konto</a>
     </li>
     <li [ngClass]="{ 'focused': searchFocus, 'unfocused': !searchFocus }" >
       <form id="productFilter">

@@ -1,6 +1,7 @@
 <navbar (navState)="changeCanvasState($event)"></navbar>
 <topbar [state]="topbarState"></topbar>
 <header>
+  <div class="bg"></div>
 </header>
 <div [@off-canvas]="canvasState" class="container">
   <router-outlet></router-outlet>

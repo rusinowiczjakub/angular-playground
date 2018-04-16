@@ -20,7 +20,7 @@ import { ProductComponent } from './product/product.component';
         })),
 
         transition('out <=> in', animate('300ms')),
-    ])
+    ]),
   ],
   providers: [ SearchService ]
 })
