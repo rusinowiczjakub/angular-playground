@@ -20,14 +20,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<navbar (navState)=\"changeCanvasState($event)\"></navbar>\n<topbar [state]=\"topbarState\"></topbar>\n<header>\n</header>\n<div [@off-canvas]=\"canvasState\" class=\"container\">\n  <router-outlet></router-outlet>\n  <section>\n    <product></product>\n</section>\n</div>"
+module.exports = "<navbar (navState)=\"changeCanvasState($event)\"></navbar>\n<topbar [state]=\"topbarState\"></topbar>\n<header>\n  <div class=\"bg\"></div>\n</header>\n<div [@off-canvas]=\"canvasState\" class=\"container\">\n  <router-outlet></router-outlet>\n  <section>\n    <product></product>\n</section>\n</div>"
 
 /***/ }),
 
 /***/ "./src/app/app.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = "header:first-of-type {\n  width: 100%;\n  height: 70vh;\n  background: -webkit-gradient(linear, left top, right top, from(rgba(44, 108, 203, 0.6)), color-stop(rgba(0, 154, 237, 0.45)), color-stop(rgba(0, 192, 209, 0.45)), color-stop(rgba(0, 220, 133, 0.45)), to(rgba(168, 235, 18, 0.45))), url('bg-image.aa15bef03239d8e9b492.jpg') no-repeat center;\n  background: linear-gradient(to right, rgba(44, 108, 203, 0.6), rgba(0, 154, 237, 0.45), rgba(0, 192, 209, 0.45), rgba(0, 220, 133, 0.45), rgba(168, 235, 18, 0.45)), url('bg-image.aa15bef03239d8e9b492.jpg') no-repeat center; }\n\nsection:first-of-type {\n  margin: 0 auto;\n  width: 70%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\nsection header {\n  width: 100%;\n  height: 450px;\n  background: white; }\n\nsection h3 {\n  color: white;\n  margin-left: 90px; }\n"
+module.exports = "header:first-of-type {\n  width: 100%;\n  height: 70vh;\n  background: -webkit-gradient(linear, left top, right top, from(rgba(44, 108, 203, 0.6)), color-stop(rgba(0, 154, 237, 0.45)), color-stop(rgba(0, 192, 209, 0.45)), color-stop(rgba(0, 220, 133, 0.45)), to(rgba(168, 235, 18, 0.45))), url('bg-image.aa15bef03239d8e9b492.jpg') no-repeat center;\n  background: linear-gradient(to right, rgba(44, 108, 203, 0.6), rgba(0, 154, 237, 0.45), rgba(0, 192, 209, 0.45), rgba(0, 220, 133, 0.45), rgba(168, 235, 18, 0.45)), url('bg-image.aa15bef03239d8e9b492.jpg') no-repeat center; }\n  header:first-of-type .bg {\n    background: url();\n    width: 100%;\n    height: 100%; }\n  section:first-of-type {\n  margin: 0 auto;\n  width: 70%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  section header {\n  width: 100%;\n  height: 450px;\n  background: white; }\n  section h3 {\n  color: white;\n  margin-left: 90px; }\n"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ var AppComponent = /** @class */ (function () {
                         'margin-left': '250px'
                     })),
                     Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* transition */])('out <=> in', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])('300ms')),
-                ])
+                ]),
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_2__search_service__["a" /* SearchService */]]
         }),
@@ -159,7 +159,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "        <nav [@slideInOut]=\"menuState\">\n\n          \n          <span class=\"wrapper\" [@slideIcon]=\"iconState\">\n            <i class=\"{{ menuState == 'out' ? 'fa fa-th' : 'fa fa-times' }}\" (click)=\"navToggle()\"></i>\n            <p>Katalog</p>\n          </span>\n          <ul>\n            <li><a href=\"/\"><i *ngIf=\"menuState == 'in'\" class=\"fa fa-home\"></i><span [@showA]=\"stateA\">Strona główna</span></a></li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-mars\"></i>\n                <span [@showA]=\"stateA\" >Mężczyzna <i (click)=\"categoryToggle(1)\" class=\"{{ categoryState[1] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}\" aria-hidden=\"true\"></i></span>\n              </a>\n              <ul [@slideCategory]=\"categoryState[1]\">\n                <li [@slideCategory]=\"listState\">Okrycia wierzchnie</li>\n                <li [@slideCategory]=\"listState\">T-shirty</li>\n                <li [@slideCategory]=\"listState\">Spodnie</li>\n                <li [@slideCategory]=\"listState\">Bluzy</li>\n                <li [@slideCategory]=\"listState\">Koszule</li>\n                <li [@slideCategory]=\"listState\">Dodatki</li>\n              </ul>\n            </li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-venus\" aria-hidden=\"true\"></i>\n                <span [@showA]=\"stateA\">Kobieta <i (click)=\"categoryToggle(2)\"  class=\"fa fa-chevron-down\" aria-hidden=\"true\"></i></span>\n              </a>\n              <ul [@slideCategory]=\"categoryState[2]\">\n                <li [@slideCategory]=\"listState\">Okrycia wierzchnie</li>\n                <li [@slideCategory]=\"listState\">T-shirty</li>\n                <li [@slideCategory]=\"listState\">Spodnie</li>\n                <li [@slideCategory]=\"listState\">Sukienki</li>\n                <li [@slideCategory]=\"listState\">Spódnice</li>\n                <li [@slideCategory]=\"listState\">Bluzy</li>\n                <li [@slideCategory]=\"listState\">Dodatki</li>\n              </ul>\n            </li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-intersex\"></i>\n                <span [@showA]=\"stateA\">Unisex <i (click)=\"categoryToggle(3)\" class=\"{{ categoryState[3] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}\" aria-hidden=\"true\"></i></span>\n              </a>\n                <ul [@slideCategory]=\"categoryState[3]\">\n                  <li [@slideCategory]=\"listState\">Test</li>\n                  <li [@slideCategory]=\"listState\">test 2</li>\n                  <li [@slideCategory]=\"listState\">test 3</li>\n                </ul>\n            </li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-child\" aria-hidden=\"true\"></i>\n                <span [@showA]=\"stateA\">Dzieci<i (click)=\"categoryToggle(4)\"  class=\"fa fa-chevron-down\" aria-hidden=\"true\"></i></span>\n              </a>\n              <ul [@slideCategory]=\"categoryState[4]\">\n                <li [@slideCategory]=\"listState\">Zabawki</li>\n              </ul>\n            </li>\n          </ul>\n          \n        </nav>"
+module.exports = "        <nav [@slideInOut]=\"menuState\">\n\n          \n          <span class=\"wrapper\" [@slideIcon]=\"iconState\">\n            <i class=\"{{ menuState == 'out' ? 'fa fa-th' : 'fa fa-times' }}\" (click)=\"navToggle()\"></i>\n            <p>Katalog</p>\n          </span>\n          <ul>\n            <li *ngIf=\"mobile\" style=\"display: inline-block\"><a href=\"/\"><span [@showA]=\"stateA\">Zaloguj</span></a></li>\n            <li *ngIf=\"mobile\" style=\"display: inline-block\" ><a href=\"/\"><span [@showA]=\"stateA\">Załóż konto</span></a></li>\n            <li><a href=\"/\"><i *ngIf=\"menuState == 'in'\" class=\"fa fa-home\"></i><span [@showA]=\"stateA\">Strona główna</span></a></li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-mars\"></i>\n                <span [@showA]=\"stateA\" >Mężczyzna <i (click)=\"categoryToggle(1)\" class=\"{{ categoryState[1] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}\" aria-hidden=\"true\"></i></span>\n              </a>\n              <ul [@slideCategory]=\"categoryState[1]\">\n                <li [@slideCategory]=\"listState\">Okrycia wierzchnie</li>\n                <li [@slideCategory]=\"listState\">T-shirty</li>\n                <li [@slideCategory]=\"listState\">Spodnie</li>\n                <li [@slideCategory]=\"listState\">Bluzy</li>\n                <li [@slideCategory]=\"listState\">Koszule</li>\n                <li [@slideCategory]=\"listState\">Dodatki</li>\n              </ul>\n            </li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-venus\" aria-hidden=\"true\"></i>\n                <span [@showA]=\"stateA\">Kobieta <i (click)=\"categoryToggle(2)\"  class=\"fa fa-chevron-down\" aria-hidden=\"true\"></i></span>\n              </a>\n              <ul [@slideCategory]=\"categoryState[2]\">\n                <li [@slideCategory]=\"listState\">Okrycia wierzchnie</li>\n                <li [@slideCategory]=\"listState\">T-shirty</li>\n                <li [@slideCategory]=\"listState\">Spodnie</li>\n                <li [@slideCategory]=\"listState\">Sukienki</li>\n                <li [@slideCategory]=\"listState\">Spódnice</li>\n                <li [@slideCategory]=\"listState\">Bluzy</li>\n                <li [@slideCategory]=\"listState\">Dodatki</li>\n              </ul>\n            </li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-intersex\"></i>\n                <span [@showA]=\"stateA\">Unisex <i (click)=\"categoryToggle(3)\" class=\"{{ categoryState[3] == 'opened' ? 'fa fa-chevron-up' : 'fa fa-chevron-down' }}\" aria-hidden=\"true\"></i></span>\n              </a>\n                <ul [@slideCategory]=\"categoryState[3]\">\n                  <li [@slideCategory]=\"listState\">Test</li>\n                  <li [@slideCategory]=\"listState\">test 2</li>\n                  <li [@slideCategory]=\"listState\">test 3</li>\n                </ul>\n            </li>\n            <li>\n              <a><i *ngIf=\"menuState == 'in'\" class=\"fa fa-child\" aria-hidden=\"true\"></i>\n                <span [@showA]=\"stateA\">Dzieci<i (click)=\"categoryToggle(4)\"  class=\"fa fa-chevron-down\" aria-hidden=\"true\"></i></span>\n              </a>\n              <ul [@slideCategory]=\"categoryState[4]\">\n                <li [@slideCategory]=\"listState\">Zabawki</li>\n              </ul>\n            </li>\n          </ul>\n          \n        </nav>"
 
 /***/ }),
 
@@ -203,7 +203,13 @@ var NavbarComponent = /** @class */ (function () {
         };
         this.listState = 'unvisible';
     }
-    NavbarComponent.prototype.ngOnInit = function () {
+    NavbarComponent.prototype.onResize = function () {
+        if (window.screen.width <= 768) {
+            this.mobile = true;
+        }
+        if (window.screen.width > 768) {
+            this.mobile = false;
+        }
     };
     NavbarComponent.prototype.navToggle = function () {
         this.stateA = this.stateA === 'out' ? 'in' : 'out';
@@ -219,10 +225,24 @@ var NavbarComponent = /** @class */ (function () {
         this.categoryState[index] = this.categoryState[index] === 'closed' ? 'opened' : 'closed';
         this.listState = this.listState === 'unvisible' ? 'visible' : 'unvisible';
     };
+    NavbarComponent.prototype.ngOnInit = function () {
+        if (window.screen.width <= 768) {
+            this.mobile = true;
+        }
+        if (window.screen.width > 768) {
+            this.mobile = false;
+        }
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */])
     ], NavbarComponent.prototype, "navState", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* HostListener */])("window:resize", ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], NavbarComponent.prototype, "onResize", null);
     NavbarComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'navbar',
@@ -250,11 +270,9 @@ var NavbarComponent = /** @class */ (function () {
                 Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* trigger */])('showA', [
                     Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* state */])('in', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* style */])({
                         opacity: 1,
-                        width: 0
                     })),
                     Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* state */])('out', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* style */])({
                         opacity: 0,
-                        width: 0
                     })),
                 ]),
                 Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* trigger */])('slideCategory', [
@@ -593,14 +611,14 @@ var TestComponent = /** @class */ (function () {
 /***/ "./src/app/topbar/topbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <ul>\n    <li>\n      <a href=\"\"><i class=\"fa fa-user-o\" aria-hidden=\"true\"></i><span>Zaloguj sie</span></a>\n    </li>\n    <li>\n      <a href=\"\">Załóż konto</a>\n    </li>\n    <li [ngClass]=\"{ 'focused': searchFocus, 'unfocused': !searchFocus }\" >\n      <form id=\"productFilter\">\n        <span class=\"icon\"><i class=\"fa fa-search\"></i></span>\n        <input [(ngModel)]=\"term\" name=\"search\" (blur)=\"changeOutline()\" (keyup)=\"changeTerm(term)\" (focus)=\"changeOutline()\" type=\"search\" />\n    </form>\n    </li>\n  </ul>\n</nav>"
+module.exports = "<nav>\n  <ul *ngIf=\"!mobile\">\n    <li>\n      <a *ngIf=\"!mobile\" href=\"\"><i class=\"fa fa-user-o\" aria-hidden=\"true\"></i><span>Zaloguj sie</span></a>\n    </li>\n    <li>\n      <a *ngIf=\"!mobile\" href=\"\">Załóż konto</a>\n    </li>\n    <li [ngClass]=\"{ 'focused': searchFocus, 'unfocused': !searchFocus }\" >\n      <form id=\"productFilter\">\n        <span class=\"icon\"><i class=\"fa fa-search\"></i></span>\n        <input [(ngModel)]=\"term\" name=\"search\" (blur)=\"changeOutline()\" (keyup)=\"changeTerm(term)\" (focus)=\"changeOutline()\" type=\"search\" />\n    </form>\n    </li>\n  </ul>\n</nav>"
 
 /***/ }),
 
 /***/ "./src/app/topbar/topbar.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = "nav {\n  width: 100vw;\n  height: 50px;\n  background: rgba(255, 255, 255, 0.6);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  text-align: center;\n  position: fixed;\n  -webkit-box-shadow: 0px 0px 17px 0px black;\n  box-shadow: 0px 0px 17px 0px black; }\n  nav ul {\n    width: 600px;\n    list-style-type: none;\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  nav ul li {\n      width: 120px;\n      text-align: center;\n      margin-right: 25px;\n      height: 60%; }\n  nav ul li a {\n        width: 100%;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        border-radius: 20px;\n        color: black;\n        height: 100%;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-transition: all 200ms;\n        transition: all 200ms;\n        text-decoration: none;\n        font-size: 13px; }\n  nav ul li a:hover {\n          -webkit-transition: all 200ms;\n          transition: all 200ms;\n          -webkit-box-shadow: 0px 0px 17px 0px #3c9485;\n          box-shadow: 0px 0px 17px 0px #3c9485; }\n  nav ul li:first-of-type {\n      width: 150px; }\n  nav ul li:first-of-type i {\n        margin-right: 10px; }\n  nav ul li:last-of-type {\n      background: rgba(255, 255, 255, 0.8);\n      border-radius: 20px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      height: 60%;\n      width: 300px;\n      -webkit-transition: all 400ms;\n      transition: all 400ms; }\n  nav ul li:last-of-type form {\n        width: 100%; }\n  nav ul li:last-of-type i {\n        display: inline-block;\n        margin-left: 10px;\n        border-right: 2px solid rgba(0, 0, 0, 0.1);\n        padding-right: 5px;\n        color: rgba(0, 0, 0, 0.7); }\n  nav ul li:last-of-type input {\n        display: inline-block;\n        border: none;\n        width: 80%;\n        background-color: rgba(255, 255, 255, 0.1);\n        margin-left: 5px; }\n  nav ul li:last-of-type input:focus {\n          outline: none; }\n  nav ul .focused {\n      -webkit-transition: all 400ms;\n      transition: all 400ms;\n      -webkit-box-shadow: 0px 0px 68px 0px rgba(28, 112, 223, 0.75);\n      box-shadow: 0px 0px 68px 0px rgba(28, 112, 223, 0.75); }\n  nav ul .unfocused {\n      -webkit-transition: all 400ms;\n      transition: all 400ms;\n      -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.5);\n      box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.5); }\n"
+module.exports = "nav {\n  width: 100vw;\n  height: 50px;\n  background: rgba(255, 255, 255, 0.6);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  text-align: center;\n  position: fixed;\n  -webkit-box-shadow: 0px 0px 17px 0px black;\n  box-shadow: 0px 0px 17px 0px black; }\n  nav ul {\n    width: 600px;\n    list-style-type: none;\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  nav ul li {\n      width: 120px;\n      text-align: center;\n      margin-right: 25px;\n      height: 60%; }\n  nav ul li a {\n        width: 100%;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        border-radius: 20px;\n        color: black;\n        height: 100%;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-transition: all 200ms;\n        transition: all 200ms;\n        text-decoration: none;\n        font-size: 13px; }\n  nav ul li a:hover {\n          -webkit-transition: all 200ms;\n          transition: all 200ms;\n          -webkit-box-shadow: 0px 0px 17px 0px #3c9485;\n          box-shadow: 0px 0px 17px 0px #3c9485; }\n  nav ul li:first-of-type {\n      width: 150px; }\n  nav ul li:first-of-type i {\n        margin-right: 10px; }\n  nav ul li:last-of-type {\n      background: rgba(255, 255, 255, 0.8);\n      border-radius: 20px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      height: 60%;\n      width: 300px;\n      -webkit-transition: all 400ms;\n      transition: all 400ms; }\n  nav ul li:last-of-type form {\n        width: 100%; }\n  nav ul li:last-of-type i {\n        display: inline-block;\n        margin-left: 10px;\n        border-right: 2px solid rgba(0, 0, 0, 0.1);\n        padding-right: 5px;\n        color: rgba(0, 0, 0, 0.7); }\n  nav ul li:last-of-type input {\n        display: inline-block;\n        border: none;\n        width: 80%;\n        background-color: rgba(255, 255, 255, 0.1);\n        margin-left: 5px; }\n  nav ul li:last-of-type input:focus {\n          outline: none; }\n  nav ul .focused {\n      -webkit-transition: all 400ms;\n      transition: all 400ms;\n      -webkit-box-shadow: 0px 0px 72px 0px #1c70df;\n      box-shadow: 0px 0px 72px 0px #1c70df; }\n  nav ul .unfocused {\n      -webkit-transition: all 400ms;\n      transition: all 400ms;\n      -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.5);\n      box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.5); }\n"
 
 /***/ }),
 
@@ -629,6 +647,12 @@ var TopbarComponent = /** @class */ (function () {
         this.products = service.getProducts();
     }
     TopbarComponent.prototype.ngOnInit = function () {
+        if (window.screen.width <= 768) {
+            this.mobile = true;
+        }
+        if (window.screen.width > 768) {
+            this.mobile = false;
+        }
     };
     TopbarComponent.prototype.changeOutline = function () {
         this.searchFocus = !this.searchFocus;
@@ -636,10 +660,24 @@ var TopbarComponent = /** @class */ (function () {
     TopbarComponent.prototype.changeTerm = function (term) {
         this.service.setParams(term);
     };
+    TopbarComponent.prototype.onResize = function () {
+        if (window.screen.width <= 768) {
+            this.mobile = true;
+        }
+        if (window.screen.width > 768) {
+            this.mobile = false;
+        }
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
         __metadata("design:type", String)
     ], TopbarComponent.prototype, "state", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* HostListener */])("window:resize", ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], TopbarComponent.prototype, "onResize", null);
     TopbarComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'topbar',
