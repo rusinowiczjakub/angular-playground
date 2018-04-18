@@ -8,7 +8,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   styleUrls: ['./topbar.component.scss'],
   
 })
-export class TopbarComponent implements OnInit {
+export class TopbarComponent {
 
     mobile: boolean;
     searchFocus: boolean = false;
@@ -20,33 +20,12 @@ export class TopbarComponent implements OnInit {
         this.products = service.getProducts();
     }
 
-    ngOnInit() {
-        if (window.screen.width <= 768) { // 768px portrait
-            this.mobile = true;
-        }
-
-        if (window.screen.width > 768) {
-            this.mobile = false;
-        }
-    }
-
     changeOutline() {
         this.searchFocus = !this.searchFocus;
     }
 
     changeTerm(term) {
         this.service.setParams(term);
-    }
-
-    @HostListener("window:resize", ['$event'])
-    onResize() {
-        if (window.screen.width <= 768) { // 768px portrait
-            this.mobile = true;
-        }
-
-        if (window.screen.width > 768) {
-            this.mobile = false;
-        }
     }
 
 }

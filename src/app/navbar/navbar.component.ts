@@ -61,7 +61,7 @@ import { AppComponent } from "../app.component";
   ]
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
     @Output() navState: EventEmitter<string> = new EventEmitter<string>();
     menuState: string = 'out'
@@ -76,17 +76,6 @@ export class NavbarComponent implements OnInit {
     }
     listState: string = 'unvisible';
     mobile: boolean;
-
-    @HostListener("window:resize", ['$event'])
-    onResize() {
-        if (window.screen.width <= 768) { // 768px portrait
-            this.mobile = true;
-        }
-
-        if (window.screen.width > 768) {
-            this.mobile = false;
-        }
-    }
     
     navToggle() {
         this.stateA = this.stateA === 'out' ? 'in' : 'out';
@@ -115,4 +104,16 @@ export class NavbarComponent implements OnInit {
             this.mobile = false;
         }
     }
+
+    @HostListener("window:resize", ['$event'])
+    onResize() {
+        if (window.screen.width <= 768) { // 768px portrait
+            this.mobile = true;
+        }
+
+        if (window.screen.width > 768) {
+            this.mobile = false;
+        }
+    }
+
 }
